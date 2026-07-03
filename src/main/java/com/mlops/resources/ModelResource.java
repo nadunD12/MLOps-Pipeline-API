@@ -43,6 +43,32 @@ public class ModelResource {
         return Response.ok(result).build();
     }
 
+    @GET
+    @Path("/{modelId}")
+    public Response getModel(@PathParam("modelId") String modelId) {
+        MachineLearningModel model = DataStore.getModels().get(modelId);
+        if (model == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        return Response.ok(model).build();
+    }
+
+    @PUT
+    @Path("/{modelId}")
+    public Response updateModel(@PathParam("modelId") String modelId, MachineLearningModel updatedModel) {
+        MachineLearningModel existing = DataStore.getModels().get(modelId);
+        if (existing == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        if (updatedModel.getFramework() != null) {
+            existing.setFramework(updatedModel.getFramework());
+        }
+        if (updatedModel.getStatus() != null) {
+            existing.setStatus(updatedModel.getStatus());
+        }
+        return Response.ok(existing).build();
+    }
+
     // Sub-Resource Locator Pattern implementation
     @Path("/{modelId}/metrics")
     public EvaluationMetricResource getEvaluationMetricResource(@PathParam("modelId") String modelId) {
