@@ -1,0 +1,8 @@
+target/
+.idea/
+*.iml
+*.jar
+.DS_Store
+out.txt
+out_utf8.txt
+__pycache__/
