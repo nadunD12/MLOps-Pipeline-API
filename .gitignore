@@ -6,3 +6,7 @@ target/
 out.txt
 out_utf8.txt
 __pycache__/
+extract.py
+*.pdf
+*.xlsx
+*.docx
