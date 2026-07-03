@@ -25,4 +25,11 @@ public class DiscoveryResource {
         metadata.put("primary_collections", collections);
         return Response.ok(metadata).build();
     }
+
+    @GET
+    @Path("/error")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response triggerError() {
+        throw new RuntimeException("Intentional runtime error for testing 500 response");
+    }
 }
