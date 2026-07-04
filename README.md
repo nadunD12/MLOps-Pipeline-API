@@ -1,7 +1,9 @@
-# MLOps Pipeline Management API
+# Client-Server Architectures - Coursework (2025/26)
+**Coursework (Referral / Deferral)**
 
 **Student Name:** Nadun Deepamal  
 **Student ID:** 20221130
+# MLOps Pipeline Management API
 
 ---
 ## Overview
